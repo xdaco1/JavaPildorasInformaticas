@@ -23,11 +23,12 @@ public class usoEmpleado {
 		System.out.println("Nombre:" + emp3.getNombre() + "\tSueldo: " + emp3.getSueldo() + "\tFecha alta: " + emp3.getFechaAlta());
 		*/
 		
-		Empleado[] misEmpleados = new Empleado[3];
+		Empleado[] misEmpleados = new Empleado[4];
 		
 		misEmpleados[0] = new Empleado("daniel Calderon",1000,2017,10,30);
 		misEmpleados[1] = new Empleado("maria perez",20000,2018,10,30);
 		misEmpleados[2] = new Empleado("fabian ramirez",30000,2016,10,30);
+		misEmpleados[3]	= new Empleado("andres vega");
 		
 		for (int i = 0; i < misEmpleados.length; i++) {
 			
@@ -38,6 +39,8 @@ public class usoEmpleado {
 								"\tFecha Alta: " + misEmpleados[i].getFechaAlta()
 							  );
 		}
+		
+		System.out.println();
 		
 		for (Empleado i : misEmpleados) {
 			
@@ -60,6 +63,12 @@ class Empleado{
 		sueldo	=	sue;
 		GregorianCalendar calendario =	new GregorianCalendar(anio,mes-1,dia);
 		altaContrato = calendario.getTime();
+	}
+	
+	public Empleado(String nombre) {
+		
+		this(nombre,20000,0001,01,01); //Invoca al primer constructor
+		
 	}
 	
 	public String getNombre() {
