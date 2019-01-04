@@ -10,7 +10,7 @@ public class Areas {
 		System.out.println("Elige una opción: \n1: Cuadrado \n2: Rectángulo \n3: Triángulo \n4: Círculo");
 		
 		int figura = entrada.nextInt();
-		
+		entrada.close();
 		switch (figura) {
 		case 1:
 			int lado = Integer.parseInt(JOptionPane.showInputDialog("Introduce el lado"));

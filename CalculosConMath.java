@@ -5,11 +5,11 @@ public class CalculosConMath {
 		// TODO Auto-generated method stub
 		
 		double raiz = Math.sqrt(9);
-		//System.out.println(Integer.raiz);
+		System.out.println("raiz: " + raiz);
 		
 		double num1=5.85;
 		int resultado = (int)Math.round(num1); //Refundición se trunca el valor retornado en long en int.
-		//System.out.println(resultado);
+		System.out.println("Refundicion de " + num1 + ":" + resultado);
 		
 		double base=5;
 		double exponente=3;

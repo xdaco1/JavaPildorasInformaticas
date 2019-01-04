@@ -25,6 +25,7 @@ public class AdivinaNumero {
 				
 				
 		}
+		sc.close();
 		System.out.println("Lo conseguiste!!" + " con " + intentos + " intento(s) :)");
 		
 	}

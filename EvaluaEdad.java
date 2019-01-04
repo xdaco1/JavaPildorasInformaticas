@@ -8,6 +8,7 @@ public class EvaluaEdad {
 		System.out.println("Introduce tu edad por favor");
 		
 		int edad = sc.nextInt();
+		sc.close();
 		
 		if (edad < 18) {
 			System.out.println("Eres menor de edad");

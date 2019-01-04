@@ -22,7 +22,8 @@ public class ArraysBidimensionales {
 			System.out.println();
 			for (int columna : fila) {
 				
-				System.out.print((int)(Math.random()*100) + "\t");
+				columna = (int)(Math.random()*100);
+				System.out.println(columna + "\t");
 				
 			}
 		}

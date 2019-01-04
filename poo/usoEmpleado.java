@@ -3,7 +3,7 @@ package poo;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-import javax.swing.JOptionPane;
+//import javax.swing.JOptionPane;
 
 public class usoEmpleado {
 

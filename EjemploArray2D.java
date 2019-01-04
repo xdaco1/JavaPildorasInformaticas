@@ -24,7 +24,7 @@ public class EjemploArray2D {
 		for (double[] fila : saldo) {
 			System.out.println();
 			
-			for (double columna : fila) {
+			for (@SuppressWarnings("unused") double columna : fila) { //@SuppressWarnings("unused") para que no genere advertencias por el no uso de "columna dentro del loop"
 				
 				System.out.printf("%1.2f",fila);
 				System.out.print("\t");

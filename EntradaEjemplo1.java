@@ -14,6 +14,7 @@ public class EntradaEjemplo1 {
 		System.out.println("Introduce tu edad, por favor");
 		
 		int edad = entrada.nextInt();
+		entrada.close();
 		
 		System.out.println("El usuario " + nombreUsuario + " tiene " + edad + " años");
 
