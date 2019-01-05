@@ -96,3 +96,23 @@ class Empleado{
 	private	double 	sueldo;
 	private Date	altaContrato;
 }
+
+class Jefatura extends Empleado {
+	
+	public Jefatura (String nom) {
+		super(nom);
+	}
+	
+	public void setIncentivo(double b) {
+		incentivo = b;
+	}
+	
+	public double getSueldo() { //este metodo sobre-escribe para esta clase el heredado.
+		double sueldoJefe = super.getSueldo(); // aunque se invalida el metodo de la clase padre, 
+			//no necesariamente quiere decir que no se pueda usar. En este caso, "super." instruye a que utilice
+			//el método de la clase padre.
+		return sueldoJefe + incentivo;
+	}
+	
+	private double incentivo;
+}
