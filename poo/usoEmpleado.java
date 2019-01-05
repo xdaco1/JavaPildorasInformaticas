@@ -23,12 +23,20 @@ public class usoEmpleado {
 		System.out.println("Nombre:" + emp3.getNombre() + "\tSueldo: " + emp3.getSueldo() + "\tFecha alta: " + emp3.getFechaAlta());
 		*/
 		
-		Empleado[] misEmpleados = new Empleado[4];
+		Jefatura jefeRRHH = new Jefatura("Albert Motoa");
+		jefeRRHH.setIncentivo(1000);
+		
+		Empleado[] misEmpleados = new Empleado[6];
 		
 		misEmpleados[0] = new Empleado("daniel Calderon",1000,2017,10,30);
 		misEmpleados[1] = new Empleado("maria perez",20000,2018,10,30);
 		misEmpleados[2] = new Empleado("fabian ramirez",30000,2016,10,30);
 		misEmpleados[3]	= new Empleado("andres vega");
+		misEmpleados[4] = jefeRRHH; //Polimorfismo, principio de sustitución
+			//Se puede utilizar un objeto de la subclase siempre que el programa espere un 
+			//objeto de la super clase. El array espera un objeto de tipo empleado, que por
+			//herencia está contenido en el tipo Jefatura y objeto jefeRRHH.
+		misEmpleados[5] = new Jefatura("Maria Sanchez");
 		
 		for (int i = 0; i < misEmpleados.length; i++) {
 			
@@ -43,6 +51,13 @@ public class usoEmpleado {
 		System.out.println();
 		
 		for (Empleado i : misEmpleados) {
+			
+			/* Este bucle es un ejemplo del comportamiento variable (o polimórfico) pues cuando
+			 * se recorre en el array los de tipo Jefatura usa el método subeSueldo de Empleado
+			 * pero usa getSueldo de Jefatura.
+			 * La JVM identifica de manera automática qué método de qué clase debe usar, a esto
+			 * se le llama enlazado dinámico, esto en tiempo de ejecución.
+			*/ 
 			
 			i.subeSueldo(5);
 			System.out.println(
