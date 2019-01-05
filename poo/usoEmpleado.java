@@ -38,6 +38,17 @@ public class usoEmpleado {
 			//herencia está contenido en el tipo Jefatura y objeto jefeRRHH.
 		misEmpleados[5] = new Jefatura("Maria Sanchez");
 		
+		//Casting de objetos
+		// En este escenario sucede por "referencia".
+		Jefatura jefeFinanzas = (Jefatura)misEmpleados[5];
+		jefeFinanzas.setIncentivo(50000);
+		
+		//La asignación anterior no necesariamente va a funcionar con otro objeto del array
+		//que no sea del tipo Jefatura.
+		//El siguiente código genera error, por ello se deja inhabilitado pero como muestra.
+		//Jefatura jefeAdministrativo = (Jefatura)misEmpleados[1];
+
+		
 		for (int i = 0; i < misEmpleados.length; i++) {
 			
 			misEmpleados[i].subeSueldo(5);
@@ -66,6 +77,8 @@ public class usoEmpleado {
 								"\tFecha Alta: " + i.getFechaAlta()
 							  );
 		}
+		
+		System.out.println(jefeFinanzas.getSueldo()); //El valor tanto en el array como en el objeto son los mismos "por referencia".
 	}
 
 }
