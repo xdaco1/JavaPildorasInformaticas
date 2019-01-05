@@ -104,7 +104,8 @@ class Empleado{
 		return nombre;
 	}
 	
-	public double getSueldo() {
+	public /*final Si se usa esta clausula, este método no podrá sobre-escribirse en las subclases*/ 
+		double getSueldo() {
 		
 		return sueldo;
 	}
@@ -125,7 +126,7 @@ class Empleado{
 	private Date	altaContrato;
 }
 
-class Jefatura extends Empleado {
+final class Jefatura extends Empleado { //el uso de final aquí impide que esta clase sea superclase. Se termina con la cadena de herencia.
 	
 	public Jefatura (String nom) {
 		super(nom);
@@ -136,6 +137,8 @@ class Jefatura extends Empleado {
 	}
 	
 	public double getSueldo() { //este metodo sobre-escribe para esta clase el heredado.
+		//En caso que el método de la super clase sea "final" no se podrá llevar a cabo la sobre-escritura
+		//y será necesario usar otro nombre.
 		double sueldoJefe = super.getSueldo(); // aunque se invalida el metodo de la clase padre, 
 			//no necesariamente quiere decir que no se pueda usar. En este caso, "super." instruye a que utilice
 			//el método de la clase padre.
