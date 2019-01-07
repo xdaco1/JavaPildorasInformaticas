@@ -72,7 +72,8 @@ public class usoEmpleado {
 			
 			i.subeSueldo(5);
 			System.out.println(
-								"Nombre: " + i.getNombre() + 
+								"id: " + i.getId() + 
+								"\tNombre: " + i.getNombre() + 
 								"\tSueldo: " + i.getSueldo() + 
 								"\tFecha Alta: " + i.getFechaAlta()
 							  );
@@ -91,6 +92,8 @@ class Empleado{
 		sueldo	=	sue;
 		GregorianCalendar calendario =	new GregorianCalendar(anio,mes-1,dia);
 		altaContrato = calendario.getTime();
+		id = idNext;
+		idNext++;
 	}
 	
 	public Empleado(String nombre) {
@@ -121,9 +124,15 @@ class Empleado{
 		
 	}
 	
+	public int getId() {
+		return id;
+	}
+	
 	private String 	nombre;
 	private	double 	sueldo;
 	private Date	altaContrato;
+	private	static 	int		idNext = 1;
+	private int		id;
 }
 
 final class Jefatura extends Empleado { //el uso de final aquí impide que esta clase sea superclase. Se termina con la cadena de herencia.
