@@ -1,5 +1,6 @@
 package poo;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
@@ -49,6 +50,7 @@ public class usoEmpleado {
 		//Jefatura jefeAdministrativo = (Jefatura)misEmpleados[1];
 
 		
+		/*
 		for (int i = 0; i < misEmpleados.length; i++) {
 			
 			misEmpleados[i].subeSueldo(5);
@@ -60,6 +62,16 @@ public class usoEmpleado {
 		}
 		
 		System.out.println();
+		*/
+		
+		//[Interfaces] Se plantea organizar el array previo a su proceso e impresion.
+		//Para usar el método sort, siendo estático, se invoca directamente desde su clase
+		//la API menciona que el el elemento debe implementar la interfaz Comparable.
+		
+		Arrays.sort(misEmpleados);
+		
+		//[Interfaces] Se ha organizado el array según su orden natural, este se ha determinado en la
+		// implementación del método compareTo a través del atributo sueldo.
 		
 		for (Empleado i : misEmpleados) {
 			
@@ -79,12 +91,21 @@ public class usoEmpleado {
 							  );
 		}
 		
-		System.out.println(jefeFinanzas.getSueldo()); //El valor tanto en el array como en el objeto son los mismos "por referencia".
+		//System.out.println(jefeFinanzas.getSueldo()); //El valor tanto en el array como en el objeto son los mismos "por referencia".
 	}
 
 }
 
-class Empleado{
+class Empleado implements Comparable{ //[Interfaces] Se implementa la interfaz Comparable
+	/*	[Interfaces]
+	 	Determinan el comportamiento de las clases que la implementan.
+		No se pueden instanciar.
+		Todos sus métodos son public abstract (aún cuando no se especifique) y no implementados (constuidos).
+		No tienen variables, sí constantes.
+		
+		En la práctica, tiene similitudes con una clase abstracta, sin embargo, hay que tener en cuenta
+		que Java no permite la herencia múltiple. Las interfaces solventan esta limitante. 
+	 */
 	
 	public Empleado(String nom,double sue, int anio, int mes, int dia) {
 		
@@ -101,6 +122,22 @@ class Empleado{
 		this(nombre,20000,0001,01,01); //Invoca al primer constructor
 		
 	}
+	
+	//[Interfaces] La interfaz Comparable obliga a implementar el método compareTo.
+	public int compareTo(Object miObjeto) { 
+		
+		Empleado otroEmpleado = (Empleado)miObjeto;
+		
+		if (this.sueldo < otroEmpleado.sueldo) {
+			return -1;
+		}
+		
+		if (this.sueldo > otroEmpleado.sueldo) {
+			return 1;
+		}
+		
+		return 0;
+	};
 	
 	public String getNombre() {
 		
