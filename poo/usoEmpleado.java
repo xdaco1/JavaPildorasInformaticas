@@ -49,6 +49,21 @@ public class usoEmpleado {
 		//El siguiente código genera error, por ello se deja inhabilitado pero como muestra.
 		//Jefatura jefeAdministrativo = (Jefatura)misEmpleados[1];
 
+		//[Interfaces] instanciación por sustitución.
+		Empleado directorComercial = new Jefatura("Jaime Vera");
+		Comparable ejemplo = new Empleado("Vicente Perez");
+		
+		if (directorComercial instanceof Empleado) {
+			System.out.println("Es de tipo Jefatura porque hereda de empleado");
+			
+		}
+		
+		if (ejemplo instanceof Comparable) {
+			System.out.println("Implementa la interfaz Comparable");
+			
+		}
+		
+		System.out.println(jefeFinanzas.tomarDecisiones("aumentar vacaciones"));
 		
 		/*
 		for (int i = 0; i < misEmpleados.length; i++) {
@@ -99,7 +114,7 @@ public class usoEmpleado {
 class Empleado implements Comparable{ //[Interfaces] Se implementa la interfaz Comparable
 	/*	[Interfaces]
 	 	Determinan el comportamiento de las clases que la implementan.
-		No se pueden instanciar.
+		No se pueden instanciar directamente (pero sí por principio de sustitución).
 		Todos sus métodos son public abstract (aún cuando no se especifique) y no implementados (constuidos).
 		No tienen variables, sí constantes.
 		
@@ -144,6 +159,8 @@ class Empleado implements Comparable{ //[Interfaces] Se implementa la interfaz C
 		return nombre;
 	}
 	
+	
+	
 	public /*final Si se usa esta clausula, este método no podrá sobre-escribirse en las subclases*/ 
 		double getSueldo() {
 		
@@ -172,7 +189,7 @@ class Empleado implements Comparable{ //[Interfaces] Se implementa la interfaz C
 	private int		id;
 }
 
-final class Jefatura extends Empleado { //el uso de final aquí impide que esta clase sea superclase. Se termina con la cadena de herencia.
+final class Jefatura extends Empleado implements Jefes{ //el uso de final aquí impide que esta clase sea superclase. Se termina con la cadena de herencia.
 	
 	public Jefatura (String nom) {
 		super(nom);
@@ -180,6 +197,12 @@ final class Jefatura extends Empleado { //el uso de final aquí impide que esta c
 	
 	public void setIncentivo(double b) {
 		incentivo = b;
+	}
+	
+	public String tomarDecisiones(String decision) {
+		
+		return "Un miembro de la dirección ha tomado la decisión de: " + decision;
+		
 	}
 	
 	public double getSueldo() { //este metodo sobre-escribe para esta clase el heredado.
