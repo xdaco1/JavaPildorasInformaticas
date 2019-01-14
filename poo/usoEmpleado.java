@@ -65,6 +65,11 @@ public class usoEmpleado {
 		
 		System.out.println(jefeFinanzas.tomarDecisiones("aumentar vacaciones"));
 		
+		System.out.println("El jefe " + jefeFinanzas.getNombre() + " tiene un bonus de " + jefeFinanzas.setBonus(500));
+		System.out.println("El empleado " + misEmpleados[3].getNombre() + " tiene un bonus de " + misEmpleados[3].setBonus(200));
+		System.out.println();
+		
+		
 		/*
 		for (int i = 0; i < misEmpleados.length; i++) {
 			
@@ -111,7 +116,7 @@ public class usoEmpleado {
 
 }
 
-class Empleado implements Comparable{ //[Interfaces] Se implementa la interfaz Comparable
+class Empleado implements Comparable,Trabajadores{ //[Interfaces] Se implementa la interfaz Comparable
 	/*	[Interfaces]
 	 	Determinan el comportamiento de las clases que la implementan.
 		No se pueden instanciar directamente (pero sí por principio de sustitución).
@@ -153,6 +158,10 @@ class Empleado implements Comparable{ //[Interfaces] Se implementa la interfaz C
 		
 		return 0;
 	};
+	
+	public double setBonus(double bonus) {
+		return Trabajadores.minBonus + bonus;
+	}
 	
 	public String getNombre() {
 		
@@ -203,6 +212,13 @@ final class Jefatura extends Empleado implements Jefes{ //el uso de final aquí i
 		
 		return "Un miembro de la dirección ha tomado la decisión de: " + decision;
 		
+	}
+	
+	public double setBonus(double bonus) {
+		
+		double prima = 2000;
+		
+		return Trabajadores.minBonus + bonus + prima;
 	}
 	
 	public double getSueldo() { //este metodo sobre-escribe para esta clase el heredado.
