@@ -5,6 +5,7 @@ import javax.swing.Timer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
+import java.awt.Toolkit;
 
 public class TestTemporizador {
 
@@ -29,7 +30,10 @@ class CurTime implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		
 		Date curDate = new Date();
+
 		System.out.println("Hora cada 5 segundos " + curDate);
+		Toolkit.getDefaultToolkit().beep();
+		
 		
 	}
 	
