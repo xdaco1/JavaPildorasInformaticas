@@ -16,7 +16,12 @@ public class EntradaDatos {
 		
 		if (decision==1){
 			
-			pedirDatos();
+			try {
+				pedirDatos();
+			} catch (Exception e) {
+				System.out.println("no introdujiste bien los datos");
+			}
+			
 			
 		}else{
 			
@@ -31,7 +36,8 @@ public class EntradaDatos {
 	
 		static void pedirDatos() throws InputMismatchException { //No se considera buena práctica lanzar la excepción si el código puede construirse mejor			
 		
-			try {Scanner entrada=new Scanner(System.in);
+			//try {
+			Scanner entrada=new Scanner(System.in);
 			
 			System.out.println("Introduce tu nombre, por favor");
 			
@@ -45,9 +51,9 @@ public class EntradaDatos {
 			
 			entrada.close();
 			
-			}catch(Exception e) {//ha de capturar la excepción del throws o de una superclase
-				System.out.println("no introdujiste bien los datos");
-			}
+			//}catch(Exception e) {//ha de capturar la excepción del throws o de una superclase
+			//	System.out.println("no introdujiste bien los datos");
+			//}
 		
 		
 		System.out.println("Hemos terminado");
