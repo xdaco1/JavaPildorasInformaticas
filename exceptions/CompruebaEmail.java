@@ -12,27 +12,23 @@ public class CompruebaEmail {
 		
 		String 	email = JOptionPane.showInputDialog("Introduce tu correo electrónico:");
 		
-		examinaEmail(email);
+		try {
+			examinaEmail(email);
+		} catch (Exception e) {
+			System.out.println("La dirección de email: " + email + " no es correcta");
+		}
+		
 
 	}
 	
-	static void examinaEmail(String email) throws ArrayIndexOutOfBoundsException{ //al agregar una clausula throw dentro del cuerpo del programa, 
-		//ha de agregarse el throws en el header para indicar que el método puede lanzar una excepción
+	static void examinaEmail(String email) throws EOFException{  
 	
 		int arroba 	= 	0;
 		int punto	=	0;
 		
-		if(email.length() <= 3) { //Se revisa el input para generar una excepción en caso que no cumpla con un mínimo de longitud.
-			
-			//Generación manual de la excepción
-			
-			//Recordar: la excepción es un objeto que hereda de RunTimeException y no de IOException, no es necesario gestionar el try-catch.
-			
-			//Opcion1: ArrayIndexOutOfBoundsException miExcepcion = new ArrayIndexOutOfBoundsException();
-			//throw miExcepcion;
-			
-			//Opcion2:
-			throw new ArrayIndexOutOfBoundsException();
+		if(email.length() <= 3) { 
+
+			throw new EOFException();
 			
 		}else {
 		
