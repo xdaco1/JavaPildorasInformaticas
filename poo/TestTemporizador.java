@@ -17,9 +17,15 @@ public class TestTemporizador {
 		
 		miTemporizador.start();//En este punto, la ejecución se va a detener. Se debe identifica la manera de prolongar esta ejecución.
 		
-		JOptionPane.showMessageDialog(null, "Pulsa Aceptar para detener");
+		//JOptionPane.showMessageDialog(null, "Pulsa Aceptar para detener");
 		
-		System.exit(0);
+		try {
+			Thread.sleep(20000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//System.exit(0);
 
 	}
 

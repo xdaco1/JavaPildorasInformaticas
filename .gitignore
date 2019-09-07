@@ -1,1 +1,29 @@
+<<<<<<< Updated upstream
 *.class
+=======
+/AccesoAplicacion.class
+/AdivinaNumero.class
+/Areas.class
+/ArraysBidimensionales.class
+/CalculosConMath.class
+/CompruebaMail.class
+/DeclaracionesOperadores.class
+/EjemploArray2D.class
+/EntradaEjemplo1.class
+/EntradaEjemplo2.class
+/EntradaNumeros.class
+/EvaluaEdad.class
+/Factorial.class
+/ManipulaCadenas2.class
+/ManipulaCadenas3.class
+/ManipularCadenas.class
+/PesoIdeal.class
+/PrimeraClase.class
+/UsoArray.class
+/UsoArraysII.class
+/UsoBucleFor.class
+/Variables.class
+/usoTallas$Talla.class
+/usoTallas$Talla2.class
+/usoTallas.class
+>>>>>>> Stashed changes
